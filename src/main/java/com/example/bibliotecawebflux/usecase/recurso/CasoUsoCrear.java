@@ -1,4 +1,4 @@
-package com.example.bibliotecawebflux.usecase;
+package com.example.bibliotecawebflux.usecase.recurso;
 
 import com.example.bibliotecawebflux.dto.RecursoDTO;
 import com.example.bibliotecawebflux.mapper.RecursoMapper;
@@ -11,12 +11,12 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class CasoUsoCrearRecurso implements GuardarRecurso {
+public class CasoUsoCrear implements GuardarRecurso {
     private final RepositorioRecurso repositorioRecurso;
     private final RecursoMapper mapperRecurso;
 
     @Autowired
-    public CasoUsoCrearRecurso(RecursoMapper mapperRecurso, RepositorioRecurso repositorioRecurso) {
+    public CasoUsoCrear(RecursoMapper mapperRecurso, RepositorioRecurso repositorioRecurso) {
         this.repositorioRecurso = repositorioRecurso;
         this.mapperRecurso = mapperRecurso;
     }

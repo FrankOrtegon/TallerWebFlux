@@ -1,4 +1,4 @@
-package com.example.bibliotecawebflux.usecase;
+package com.example.bibliotecawebflux.usecase.recurso;
 
 import com.example.bibliotecawebflux.dto.RecursoDTO;
 import com.example.bibliotecawebflux.mapper.RecursoMapper;
@@ -10,11 +10,11 @@ import java.util.function.Supplier;
 
 @Service
 @Validated
-public class CasoUsoConsultarListRecurso implements Supplier<Flux<RecursoDTO>> {
+public class CasoUsoConsultarList implements Supplier<Flux<RecursoDTO>> {
         private final RepositorioRecurso repositorioRecurso;
         private final RecursoMapper recursoMapper;
 
-        public CasoUsoConsultarListRecurso(RecursoMapper recursoMapper, RepositorioRecurso repositorioRecurso) {
+        public CasoUsoConsultarList(RecursoMapper recursoMapper, RepositorioRecurso repositorioRecurso) {
             this.repositorioRecurso = repositorioRecurso;
             this.recursoMapper = recursoMapper;
         }

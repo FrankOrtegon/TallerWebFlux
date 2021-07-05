@@ -1,7 +1,7 @@
-package com.example.bibliotecawebflux.router;
+package com.example.bibliotecawebflux.router.recurso;
 
 import com.example.bibliotecawebflux.dto.RecursoDTO;
-import com.example.bibliotecawebflux.usecase.CasoUsoEliminarRecurso;
+import com.example.bibliotecawebflux.usecase.recurso.CasoUsoEliminar;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -14,15 +14,15 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class EliminarRecursoRouter {
+public class EliminarRecurso {
 
     @Bean
-    public RouterFunction<ServerResponse> eliminarRecurso(CasoUsoEliminarRecurso casoUsoEliminarRecurso) {
+    public RouterFunction<ServerResponse> eliminarRecursos(CasoUsoEliminar casoUsoEliminar) {
         return RouterFunctions.route(DELETE("/eliminar/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request ->
                         ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(casoUsoEliminarRecurso.deleteById(request.pathVariable("id")), RecursoDTO.class));
+                        .body(casoUsoEliminar.deleteById(request.pathVariable("id")), RecursoDTO.class));
     }
 
 

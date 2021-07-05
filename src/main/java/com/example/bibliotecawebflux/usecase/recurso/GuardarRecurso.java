@@ -1,4 +1,4 @@
-package com.example.bibliotecawebflux.usecase;
+package com.example.bibliotecawebflux.usecase.recurso;
 import com.example.bibliotecawebflux.dto.RecursoDTO;
 import reactor.core.publisher.Mono;
 

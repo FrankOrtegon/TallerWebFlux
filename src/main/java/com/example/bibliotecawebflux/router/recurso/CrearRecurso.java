@@ -1,7 +1,7 @@
-package com.example.bibliotecawebflux.router;
+package com.example.bibliotecawebflux.router.recurso;
 
 import com.example.bibliotecawebflux.dto.RecursoDTO;
-import com.example.bibliotecawebflux.usecase.CasoUsoCrearRecurso;
+import com.example.bibliotecawebflux.usecase.recurso.CasoUsoCrear;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -13,13 +13,13 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class CrearRecursoRouter {
+public class CrearRecurso {
 
         @Bean
-        public RouterFunction<ServerResponse> createRecurso(CasoUsoCrearRecurso casoUsoCrearRecurso) {
+        public RouterFunction<ServerResponse> createRecurso(CasoUsoCrear casoUsoCrear) {
             return route(POST("/crear").and(accept(MediaType.APPLICATION_JSON)),
                     request -> request.bodyToMono(RecursoDTO.class)
-                            .flatMap(questionDTO -> casoUsoCrearRecurso.apply(questionDTO)
+                            .flatMap(questionDTO -> casoUsoCrear.apply(questionDTO)
                                     .flatMap(result -> ServerResponse.ok()
                                             .contentType(MediaType.TEXT_PLAIN)
                                             .bodyValue(result))
