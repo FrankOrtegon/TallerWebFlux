@@ -1,13 +1,10 @@
 package com.example.bibliotecawebflux.dto;
 
-public class RespuestaDTO {
+public class RespuestaRecursoDTO {
 
     private String fecha;
     private String descripcion;
     private boolean disponible;
-
-    public RespuestaDTO() {
-    }
 
     public String getFecha() {
         return fecha;

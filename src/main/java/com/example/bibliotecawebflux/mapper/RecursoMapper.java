@@ -23,6 +23,15 @@ public class RecursoMapper {
     }
 
     public Function<Recurso, RecursoDTO> RecursoToDTO() {
-        return entity -> new RecursoDTO(entity.getId(),entity.getFecha(),entity.getDisponible(), entity.getNombreRecurso(),  entity.getTipoRecursoId(), entity.getCategoriaId());
+        return recurso -> {
+            var recursoDTO = new RecursoDTO();
+            recursoDTO.setId(recurso.getId());
+            recursoDTO.setFecha(recurso.getFecha());
+            recursoDTO.setDisponible(recurso.getDisponible());
+            recursoDTO.setNombreRecurso(recurso.getNombreRecurso());
+            recursoDTO.setTipoRecursoId(recurso.getTipoRecursoId());
+            recursoDTO.setCategoriaId(recurso.getCategoriaId());
+            return recursoDTO;
+        };
     }
 }
