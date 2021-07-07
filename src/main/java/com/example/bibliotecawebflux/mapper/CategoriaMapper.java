@@ -8,7 +8,7 @@ import java.util.function.Function;
 
 @Component
 public class CategoriaMapper {
-    public Function<CategoriaDTO, Categoria> dtoToCategoria(String id) {
+    public Function<CategoriaDTO, Categoria>    dtoToCategoria(String id) {
         return updateCategoria -> {
             var categoria = new Categoria();
             categoria.setCategoriaId(id);
