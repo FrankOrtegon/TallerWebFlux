@@ -6,6 +6,7 @@ public class RespuestaRecursoDTO {
     private String descripcion;
     private boolean disponible;
 
+
     public String getFecha() {
         return fecha;
     }
